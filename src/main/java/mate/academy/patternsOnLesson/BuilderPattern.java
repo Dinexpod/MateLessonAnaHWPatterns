@@ -4,7 +4,7 @@ public class BuilderPattern implements Pattern {
     private String name;
     private int age;
 
-    public BuilderPattern(String name, int age) {
+    private BuilderPattern(String name, int age) {
         this.name = name;
         this.age = age;
     }

@@ -13,5 +13,7 @@ public class Main {
         System.out.println("I am " + builder.getPatternName());
         System.out.println("I am " + proxy.getPatternName());
         System.out.println("I am " + singleton.getPatternName());
+
+        System.out.println(singletonPattern.makePattern());
     }
 }

@@ -14,6 +14,7 @@ public class Main {
         System.out.println("I am " + proxy.getPatternName());
         System.out.println("I am " + singleton.getPatternName());
 
-        System.out.println(SingletonPattern.INSTANCE);
+        int age = SingletonPattern.getAge();
+        System.out.println(age);
     }
 }

@@ -1,12 +1,22 @@
 package mate.academy.patternsOnLesson;
 
-public enum SingletonPattern implements Pattern {
-    INSTANCE;
+public class SingletonPattern implements Pattern {
+   private static volatile SingletonPattern instanse;
 
-    private int age = 10;
+   private int age = 10;
 
-    public static int getAge() {
-        return INSTANCE.age;
+    public SingletonPattern getInstsnce() {
+        SingletonPattern localIns = instanse;
+        if (localIns == null) {
+            synchronized(SingletonPattern.class) {
+                localIns = instanse;
+                if (localIns == null) {
+                    instanse = localIns = new SingletonPattern();
+                }
+            }
+        }
+
+        return localIns;
     }
 
     public String getPatternName() {

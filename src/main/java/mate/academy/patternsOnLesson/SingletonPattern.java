@@ -3,20 +3,19 @@ package mate.academy.patternsOnLesson;
 public class SingletonPattern implements Pattern {
    private static volatile SingletonPattern instanse;
 
-   private int age = 10;
+    private SingletonPattern() {
+    }
 
     public SingletonPattern getInstsnce() {
-        SingletonPattern localIns = instanse;
-        if (localIns == null) {
+        if (instanse == null) {
             synchronized(SingletonPattern.class) {
-                localIns = instanse;
-                if (localIns == null) {
-                    instanse = localIns = new SingletonPattern();
+                if (instanse == null) {
+                    instanse = new SingletonPattern();
                 }
             }
         }
 
-        return localIns;
+        return instanse;
     }
 
     public String getPatternName() {
